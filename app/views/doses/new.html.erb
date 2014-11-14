@@ -1,0 +1,17 @@
+<h1>Add a dose</h1>
+
+<%= form_for([@cocktail, @dose]) do |f| %>
+
+<div class="field">
+  <%= f.label :amount %>
+  <%= f.text_field :amount %>
+</div>
+
+<div class="field">
+  <%= f.label :ingredient_id %>
+  <%= f.collection_select(:ingredient_id, Ingredient.all, :id, :name) %>
+</div>
+
+<%= f.submit %>
+
+<% end %>
